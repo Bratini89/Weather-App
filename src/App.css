@@ -163,7 +163,7 @@ small:hover {
 }
 
 .container:hover {
-box-shadow: 1px 1px 10px 10px rgb(122, 17, 26);
+  box-shadow: 1px 1px 10px 10px rgb(122, 17, 26);
 
 }
 
