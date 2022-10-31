@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import './App.css'
 import RingLoader from 'react-spinners/RingLoader';
+import Hello from './components/Hello';
 
 
 
@@ -11,6 +12,8 @@ function App() {
   const [isCelsius, setIsCelsius] = useState(true)
 
   const [loading, setLoading] = useState(false)
+
+
 
 
   useEffect(() => {
@@ -36,7 +39,9 @@ function App() {
 
   console.log(weather)
 
-
+  const hi = () => {
+    alert('Espero que te haya gustado esta App')
+  }
 
   return (
     <>
@@ -61,7 +66,7 @@ function App() {
               <i className="fa-solid fa-city"></i> {" "}
               <b>City:</b>{" "}{weather.name}</h3><br /><br />
             <p className='classp'>"{weather.weather?.[0].description}"</p>
-            <br /><br />
+            <br />
             <img className="img" src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="Weather" />
             <br />
             <div className='container'>
@@ -70,24 +75,60 @@ function App() {
                 <b>Temperature:</b> {isCelsius ? ((weather.main?.temp) - 273.15).toFixed() : ((weather.main?.temp) * 9 / 5 - 459.67).toFixed()}
                 {" "}{isCelsius ? "°Celsius" : "°Fahrenheit"}
               </p>
-
-              <ul>
-                <li>
-                  <i className="fa-solid fa-droplet"></i> {" "}
-                  <b>Humidity:</b>{" "}{weather.main?.humidity}%</li>
-                <li>
-                  <i className="fa-solid fa-wind"></i>{" "}
-                  <b>Wind Speed:</b>{" "}{weather.wind?.speed} m/s</li>
-                <li>
-                  <i className="fa-solid fa-temperature-arrow-down"></i>{" "}
-                  <b>Pressure:</b> {weather.main?.pressure} Mb
-                </li>
-              </ul>
+              <div className='list'>
+                <ul>
+                  <li>
+                    <i className="fa-solid fa-droplet"></i> {" "}
+                    <b>Humidity:</b>{" "}{weather.main?.humidity}%</li>
+                  <li>
+                    <i className="fa-solid fa-wind"></i>{" "}
+                    <b>Wind Speed:</b>{" "}{weather.wind?.speed} m/s</li>
+                  <li>
+                    <i class="fa-solid fa-poo-storm"></i>{" "}
+                    <b>Pressure:</b> {weather.main?.pressure} Mb
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-temperature-arrow-up"></i> {" "}
+                    <b>Temp max:</b>{" "}
+                    {isCelsius ? ((weather.main?.temp_max) - 273).toFixed() : ((weather.main?.temp_max) * 9 / 5 - 459.67).toFixed()}
+                    {" "}{isCelsius ? "°C" : "°F"}
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <i class="fa-solid fa-temperature-quarter"></i> {" "}
+                    <b>Feels like:</b> {isCelsius ?
+                      ((weather.main?.feels_like) - 273).toFixed() : ((weather.main?.feels_like) * 9 / 5 - 459.67).toFixed()}
+                    {" "}{isCelsius ? "°C" : "°F"}
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-cloud"></i>{" "}
+                    "{weather.weather?.[0].main}"
+                  </li>
+                  <li>
+                    <i class="fa-regular fa-lightbulb"></i>{" "}
+                    {weather.weather?.[0].id}
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-temperature-arrow-down"></i>{" "}
+                    <b>Temp Min:</b>{" "}
+                    {isCelsius ? ((weather.main?.temp_min) - 273).toFixed() :
+                      ((weather.main?.temp_min) * 9 / 5 - 459.67).toFixed()
+                    }
+                    {" "}{isCelsius ? "°C" : "°F"}
+                  </li>
+                </ul>
+              </div>
             </div>
             <button className='btn' onClick={() => setIsCelsius(!isCelsius)}>
-              <b>°Celsius | °Fahrenheit</b></button>
+              Change <b>°C / °F</b></button>
+            <br /><br />
+            <hr /><hr /><br />
+            <Hello />
+            <button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button>
           </div>
         }
+
       </div>
 
     </>

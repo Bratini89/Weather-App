@@ -126,30 +126,42 @@ p {
   text-align: center;
 }
 
+.list {
+
+  display: flex;
+  padding: 0.5rem;
+  margin: 0.1rem;
+}
+
+
+.btnn {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .classp {
-  background-color: rgba(203, 255, 244, 0.76);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 15px blue;
+  color: whitesmoke;
+}
+
+.small1 {
   border-radius: 10px;
-  box-shadow: 1px 1px 10px 5px lightgray;
+  box-shadow: 1px 1px 10px 5px lightgrey;
   transition: 2s linear;
-  padding: 0.5rem;
   text-align: center;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+  flex-direction: center;
+  width: fit-content;
+  color: burlywood;
 }
 
-small {
-  background-color: rgba(203, 255, 244, 0.76);
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px 5px lightgray;
-  transition: 2s linear;
-  padding: 0.5rem;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin: 10rem;
-}
 
-small:hover {
+.small1:hover {
   color: white;
   box-shadow: 1px 1px 10px 5px darkblue;
 }
@@ -157,9 +169,10 @@ small:hover {
 .container {
   background-color: rgba(203, 255, 244, 0.76);
   border-radius: 10px;
-  width: fit-content;
+  width: initial;
   animation: scroll 2.5s infinite;
   transition: 2s linear;
+  display: list-item;
 }
 
 .container:hover {
@@ -187,6 +200,11 @@ li {
   justify-content: center;
 }
 
+.social {
+  display: flex;
+  list-style: ;
+}
+
 @media screen and (max-width: 320px) {
 
   .container {
@@ -195,7 +213,13 @@ li {
     width: fit-content;
   }
 
-  small {
+  .list {
+    display: contents;
+    padding: 0.5rem;
+    margin: 0.1rem;
+  }
+
+  .small1 {
     width: fit-content;
     justify-content: center;
     text-align: center;
@@ -207,4 +231,35 @@ li {
     max-height: fit-content;
     box-shadow: 1px 1px 15px 5px lightyellow;
   }
+}
+
+@media screen and (max-width: 465px) {
+  .list {
+    display: list-item;
+    padding: 0.5rem;
+    margin: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: fit-content;
+  }
+}
+
+.hi {
+  color: black;
+  background-color: blue;
 }
