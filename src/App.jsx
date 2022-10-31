@@ -58,7 +58,8 @@ function App() {
           :
 
           <div className='header'>
-            <h2>Weather Condition App</h2>
+            <h2><button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button> {" "}
+              Weather Condition App</h2>
             <h3><i className="fa-solid fa-location-dot "></i> {" "}
               <b> Country:</b> {weather.sys?.country}
             </h3>
@@ -67,7 +68,6 @@ function App() {
               <b>City:</b>{" "}{weather.name}</h3>
             <p className='classp'>"{weather.weather?.[0].description}"</p>
             <img className="img" src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="Weather" />
-            <br />
             <div className='container'>
               <p>
                 <i className="fa-solid fa-temperature-three-quarters"></i> {" "}
@@ -120,11 +120,9 @@ function App() {
               </div>
             </div>
             <button className='btn' onClick={() => setIsCelsius(!isCelsius)}>
-              Change <b>°C / °F</b></button>
-            <br />
-            <hr /><br />
-            <Hello />
-            <button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button>
+              Change <b>°C / °F</b></button><br/>
+            <hr /><br/>
+            <Hello /> 
           </div>
         }
 
