@@ -1,3 +1,9 @@
+:root {
+  color: #213547;
+}
+
+
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -79,7 +85,6 @@ i {
 .img {
   display: flex;
   fill-opacity: border linear !important;
-  box-shadow: 1px 1px 10px 5px rgb(209, 209, 216);
   border-radius: 10px;
   transition: 2s linear;
   z-index: 100;
@@ -239,27 +244,4 @@ li {
     padding: 0.5rem;
     margin: 0.1rem;
   }
-}
-
-@media screen and (max-width: 600px) {
-
-  .container {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: fit-content;
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-  .container {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: fit-content;
-  }
-}
-
-.hi {
-  color: black;
-  background-color: blue;
 }

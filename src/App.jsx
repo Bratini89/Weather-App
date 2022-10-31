@@ -64,9 +64,8 @@ function App() {
             </h3>
             <h3>
               <i className="fa-solid fa-city"></i> {" "}
-              <b>City:</b>{" "}{weather.name}</h3><br /><br />
+              <b>City:</b>{" "}{weather.name}</h3>
             <p className='classp'>"{weather.weather?.[0].description}"</p>
-            <br />
             <img className="img" src={`http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="Weather" />
             <br />
             <div className='container'>
@@ -122,8 +121,8 @@ function App() {
             </div>
             <button className='btn' onClick={() => setIsCelsius(!isCelsius)}>
               Change <b>°C / °F</b></button>
-            <br /><br />
-            <hr /><hr /><br />
+            <br />
+            <hr /><br />
             <Hello />
             <button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button>
           </div>
