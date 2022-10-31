@@ -58,7 +58,7 @@ function App() {
           :
 
           <div className='header'>
-            <h2><button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button> {" "}
+            <h2><button className="small1" onClick={hi}><i class="fa-regular fa-face-smile"></i></button>{" "}
               Weather Condition App</h2>
             <h3><i className="fa-solid fa-location-dot "></i> {" "}
               <b> Country:</b> {weather.sys?.country}
@@ -121,8 +121,7 @@ function App() {
             </div>
             <button className='btn' onClick={() => setIsCelsius(!isCelsius)}>
               Change <b>°C / °F</b></button><br/>
-            <hr /><br/>
-            <Hello /> 
+            <Hello />
           </div>
         }
 
